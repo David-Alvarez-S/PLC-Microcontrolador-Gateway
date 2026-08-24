@@ -9,7 +9,7 @@ static SemaphoreHandle_t data_mutex = NULL;
 
 void data_dict_init(void) {
   data_mutex = xSemaphoreCreateMutex();
-  for (int i = 1; i < MAX_TAGS; i++) {
+  for (int i = 0; i < MAX_TAGS; i++) {
     data_points[i].tag_id = 0xFFFFFFFF; // Invalido
     data_points[i].value = 0;
     data_points[i].quality = QUALITY_STALE;
@@ -30,6 +30,7 @@ bool data_dict_get(uint32_t tag_id, DataPoint_t *out) {
         *out = data_points[i]; // Si hay el id buscado devolver el la estructura
                                // al out
         found = true;
+        break;
       }
     }
     xSemaphoreGive(data_mutex); // Devolvemos el semaforo
