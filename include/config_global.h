@@ -21,6 +21,7 @@
 // Buttons
 #define BUTTON_LEFT 4
 #define BUTTON_RIGHT 36
+#define BUTTON_ENTER 39
 // ---------- CONFIGURACIONES DEL SISTEMA ----------
 // DEBUG MODE
 #define DEBUG_MODE        // Para mostrar Logs en pantalla
@@ -54,5 +55,14 @@
 
 #define I2C0_SDA 21
 #define I2C0_SCL 22
+
+// UART gateway (modo escucha)
+#define GATEWAY_UART_BAUD 115200
+#define GATEWAY_UART_TX 1
+#define GATEWAY_UART_RX 3
+// Delimitador de fin de trama
+#define UART_FRAME_END '\n'
+// Tamaño máximo de trama
+#define UART_MAX_FRAME_LEN 128
 
 #endif // CONFIG_GLOBAL_H

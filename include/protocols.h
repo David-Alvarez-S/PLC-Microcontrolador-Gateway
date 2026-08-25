@@ -10,4 +10,6 @@ void rs485_driver_init(void);
 void rs232_driver_init(void);
 // ---------- MODBUS TCP ----------
 bool modbus_tcp_init(void);
+// ---------- UART ----------
+void uart_gateway_init(void);
 #endif // PROTOCOLS_H
